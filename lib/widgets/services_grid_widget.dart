@@ -3,7 +3,7 @@ import 'package:tawakalna/custom_icons/tawakalna_app_icons_icons.dart';
 
 class ServicesGridWidget extends StatelessWidget {
   static const iconSize = 35.0;
-  static const fontSize = 12.0;
+  static const fontSize = 11.0;
   static const iconColor = Color(0xFF5E9A92);
   static const heightSpace = 20.0;
 

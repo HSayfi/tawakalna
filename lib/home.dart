@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
           color: Colors.white,
           child: Container(
             width: 200.0,
-            height: 55,
+            height: 56,
             child: TabBar(
               indicatorWeight: 0.0001,
               labelPadding: EdgeInsets.only(bottom: 0.0),

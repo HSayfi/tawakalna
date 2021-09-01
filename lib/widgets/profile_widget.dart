@@ -12,8 +12,8 @@ class ProfileWidget extends StatelessWidget {
       child: Stack(
         children: [
           Opacity(
-            // opacity: 0.15,
-            opacity: 0.50,
+            opacity: 0.15,
+            // opacity: 0.50,
             child: Image.asset(
               'assets/images/profile_bg2.png',
               fit: BoxFit.cover,
