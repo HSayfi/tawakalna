@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ArabicConverterPackage {
 
   static String monthToArabic (int month) {
-    String monthArabic;
+    String monthArabic="";
 
     switch (month){
       case 9:
@@ -11,11 +11,11 @@ class ArabicConverterPackage {
       case 10:
         return monthArabic = "اوكتوبر";
     }
-    return "";
+    return monthArabic;
   }
 
   static String weekdayToArabic (int weekday) {
-    String weekdayArabic;
+    String weekdayArabic ="الأحد";
 
     switch (weekday){
       case 1:
@@ -33,7 +33,7 @@ class ArabicConverterPackage {
       case 7:
         return weekdayArabic = "الأحد";
     }
-    return "الأحد";
+    return weekdayArabic;
   }
 
   static String toArabicNumbers(String number) {
