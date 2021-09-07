@@ -163,7 +163,7 @@ class ServicesGridWidget extends StatelessWidget {
             ],
           ),
           Container(
-            height: 170,
+            height: 180,
             child: ListView.builder(
               itemCount: servicesIcons.length,
               itemBuilder: (context, index) {

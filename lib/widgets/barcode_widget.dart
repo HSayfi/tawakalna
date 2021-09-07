@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:tawakalna/arabic_converter_packge.dart';
 
-class BarcodeWidget extends StatelessWidget {
-  const BarcodeWidget({Key? key}) : super(key: key);
+class BarcodeWidget extends StatefulWidget {
+
+  @override
+  _BarcodeWidgetState createState() => _BarcodeWidgetState();
+}
+
+class _BarcodeWidgetState extends State<BarcodeWidget> {
+  var dateTimeArabic = ArabicConverterPackage.arabicDateTimeNumbers();
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +28,7 @@ class BarcodeWidget extends StatelessWidget {
         ),
       ),
       // color: Colors.green[200],
-      height: 155,
+      height: 120,
       width: 380,
       // padding: EdgeInsets.fromLTRB(25, 10, 25, 10),
       // color: Colors.green[200],
@@ -40,7 +47,14 @@ class BarcodeWidget extends StatelessWidget {
                       alignment: Alignment.topLeft,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Icon(Icons.refresh, color: Colors.white,),
+                        child: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              dateTimeArabic = ArabicConverterPackage.arabicDateTimeNumbers();
+                            });
+                          },
+                          icon: Icon(Icons.refresh, color: Colors.white),
+                        ),
                       )),
                 ),
                 Expanded(
@@ -53,7 +67,7 @@ class BarcodeWidget extends StatelessWidget {
                         height: 25,
                       ),
                       Text(
-                        "محصّن جرعة أولى",
+                        "محصّن",
                         textAlign: TextAlign.right,
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold),
@@ -62,9 +76,19 @@ class BarcodeWidget extends StatelessWidget {
                         height: 10,
                       ),
                       Text(
-                        "آخر تحديث: الأربعاء ١ سبتمبر، ١١:٢٦ م",
+                        //آخر تحديث: الأربعاء ١ سبتمبر، ١١:٢٦ م
+                        "أكمل جرعات لقاح كورونا (كوفيد-19)",
                         textAlign: TextAlign.right,
-                        style: TextStyle(color: Colors.white, fontSize: 12),
+                        style: TextStyle(color: Colors.white, fontSize: 14),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        //آخر تحديث: الأربعاء ١ سبتمبر، ١١:٢٦ م
+                        "آخر تحديث: $dateTimeArabic",
+                        textAlign: TextAlign.right,
+                        style: TextStyle(color: Colors.white, fontSize: 14),
                       ),
                     ],
                   ),
@@ -77,29 +101,29 @@ class BarcodeWidget extends StatelessWidget {
             ),
           ),
           //Injecttions row
-          Expanded(
-            flex: 1,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.vertical(
-                  bottom: Radius.circular(8),
-                ),
-                color: Colors.white,
-              ),
-              width: double.infinity,
-              height: 155 * 0.4,
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Text(
-                  "محصن جرعة أولى حتى تاريخ ٢٠٢١/١٠/٢٩",
-                  textAlign: TextAlign.right,
-                  style: TextStyle(
-                    fontSize: 12,
-                  ),
-                ),
-              ),
-            ),
-          ),
+          // Expanded(
+          //   flex: 1,
+          //   child: Container(
+          //     decoration: BoxDecoration(
+          //       borderRadius: BorderRadius.vertical(
+          //         bottom: Radius.circular(8),
+          //       ),
+          //       color: Colors.white,
+          //     ),
+          //     width: double.infinity,
+          //     height: 155 * 0.4,
+          //     child: Padding(
+          //       padding: const EdgeInsets.all(10.0),
+          //       child: Text(
+          //         "محصن جرعة أولى حتى تاريخ ٢٠٢١/١٠/٢٩",
+          //         textAlign: TextAlign.right,
+          //         style: TextStyle(
+          //           fontSize: 12,
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
